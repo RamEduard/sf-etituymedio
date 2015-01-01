@@ -1,0 +1,8 @@
+/.idea/
+/vendor/
+/nbproject/
+composer.lock
+UPGRADE.md
+UPGRADE-2.2.md
+UPGRADE-2.3.md
+UPGRADE-2.4.md
