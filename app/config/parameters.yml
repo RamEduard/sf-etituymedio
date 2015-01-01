@@ -3,7 +3,7 @@ parameters:
     database_driver: pdo_mysql
     database_host: 127.0.0.1
     database_port: null
-    database_name: sf_etituymedio
+    database_name: sf_admin
     database_user: root
     database_password: null
     mailer_transport: smtp
@@ -11,4 +11,4 @@ parameters:
     mailer_user: null
     mailer_password: null
     locale: es
-    secret: 9c38a467095ef87ec7fe4db9ccf98fec4d00d625
+    secret: ThisTokenIsNotSoSecretChangeIt
