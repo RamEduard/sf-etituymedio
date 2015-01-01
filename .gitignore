@@ -9,3 +9,5 @@ UPGRADE-2.4.md
 /app/cache/
 /app/logs/
 /web/bundles/
+/app/bootstrap.php.cache
+
