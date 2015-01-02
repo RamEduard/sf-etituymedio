@@ -47,6 +47,11 @@ class GradoAdmin extends Admin
         $formMapper
             ->add('id')
             ->add('numero')
+            ->add('secciones', 'entity', array(
+                'multiple' => true,
+                'class' => 'TuyMedioSeccionBundle:Seccion',
+                'property' => 'letra'
+            ))
         ;
     }
 

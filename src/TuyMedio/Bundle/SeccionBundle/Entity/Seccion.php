@@ -42,7 +42,7 @@ class Seccion
      * Set id
      * 
      * @param integer $id
-     * @return Alumno
+     * @return Seccion
      */
     public function setId($id)
     {

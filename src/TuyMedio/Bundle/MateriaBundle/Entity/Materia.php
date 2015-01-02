@@ -50,7 +50,7 @@ class Materia
      * Set id
      * 
      * @param integer $id
-     * @return Alumno
+     * @return Materia
      */
     public function setId($id)
     {

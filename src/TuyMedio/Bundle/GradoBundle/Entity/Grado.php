@@ -54,6 +54,19 @@ class Grado
     {
         return $this->id;
     }
+    
+    /**
+     * Set id
+     * 
+     * @param integer $id
+     * @return Grado
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+        
+        return $this;
+    }
 
     /**
      * Set numero
