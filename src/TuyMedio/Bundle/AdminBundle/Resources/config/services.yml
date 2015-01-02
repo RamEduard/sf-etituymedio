@@ -1,0 +1,6 @@
+services:
+    tuy_medio_usuario.admin.usuario:
+        class: TuyMedio\Bundle\AdminBundle\Admin\UsuarioAdmin
+        arguments: [~, TuyMedio\Bundle\AdminBundle\Entity\Usuario, TuyMedioAdminBundle:UsuarioAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Usuario}
