@@ -1,6 +1,6 @@
 <?php
 
-namespace TuyMedio\Bundle\SeccionBundle\Admin;
+namespace TuyMedio\Bundle\GradoBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
@@ -8,7 +8,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-class SeccionAdmin extends Admin
+class GradoAdmin extends Admin
 {
     /**
      * @param DatagridMapper $datagridMapper
@@ -17,7 +17,7 @@ class SeccionAdmin extends Admin
     {
         $datagridMapper
             ->add('id')
-            ->add('letra')
+            ->add('numero')
         ;
     }
 
@@ -28,7 +28,7 @@ class SeccionAdmin extends Admin
     {
         $listMapper
             ->add('id')
-            ->add('letra')
+            ->add('numero')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -46,7 +46,7 @@ class SeccionAdmin extends Admin
     {
         $formMapper
             ->add('id')
-            ->add('letra')
+            ->add('numero')
         ;
     }
 
@@ -57,7 +57,7 @@ class SeccionAdmin extends Admin
     {
         $showMapper
             ->add('id')
-            ->add('letra')
+            ->add('numero')
         ;
     }
 }
