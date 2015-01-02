@@ -1,0 +1,6 @@
+services:
+    tuy_medio_seccion.admin.seccion:
+        class: TuyMedio\Bundle\SeccionBundle\Admin\SeccionAdmin
+        arguments: [~, TuyMedio\Bundle\SeccionBundle\Entity\Seccion, TuyMedioSeccionBundle:SeccionAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Seccion}
