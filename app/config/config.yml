@@ -75,7 +75,7 @@ swiftmailer:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: Test\UserBundle\Entity\User
+    user_class: TuyMedio\Bundle\UsuarioBundle\Entity\Usuario
 #    user_class: Sonata\UserBundle\Entity\BaseUser
 
     group:
@@ -118,8 +118,8 @@ sonata_block:
         sonata.block.service.text: # used to if you plan to use Sonata user routes
 
 parameters:
-    sonata.user.admin.user.entity: Test\UserBundle\Entity\User
-    sonata.user.admin.user.class: Test\UserBundle\Admin\UserAdmin
+    sonata.user.admin.user.entity: TuyMedio\Bundle\UsuarioBundle\Entity\Usuario
+    sonata.user.admin.user.class: TuyMedio\Bundle\UsuarioBundle\Admin\UsuarioAdmin
 
 services:
     sonata.user.admin.group:
