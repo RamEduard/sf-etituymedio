@@ -8,7 +8,8 @@ class AppKernel extends TuyMedioKernel
     public function registerBundles()
     {
         $bundles = array(
-            new TuyMedio\Bundle\UsuarioBundle\TuyMedioUsuarioBundle(),
+            new AppBundle\AppBundle(),
+            new TuyMedio\Bundle\AdminBundle\TuyMedioAdminBundle(),
             new TuyMedio\Bundle\KernelBundle\TuyMedioKernelBundle(),
         );
         

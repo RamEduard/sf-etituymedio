@@ -50,6 +50,6 @@ sonata_user:
    prefix: /admin
 
 usuario_bundle:
-    resource: "@TuyMedioUsuarioBundle/Controller/"
+    resource: "@AppBundle/Controller/"
     type:     annotation
     prefix:   /

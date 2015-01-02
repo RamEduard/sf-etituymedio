@@ -1,6 +1,6 @@
 <?php
 
-namespace TuyMedio\Bundle\UsuarioBundle\DependencyInjection;
+namespace TuyMedio\Bundle\AdminBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

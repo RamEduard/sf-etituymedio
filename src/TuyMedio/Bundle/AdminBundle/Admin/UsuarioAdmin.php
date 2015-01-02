@@ -1,6 +1,6 @@
 <?php
 
-namespace TuyMedio\Bundle\UsuarioBundle\Admin;
+namespace TuyMedio\Bundle\AdminBundle\Admin;
 
 use Sonata\UserBundle\Admin\Model\UserAdmin as BaseUserAdmin;
 use Sonata\AdminBundle\Form\FormMapper;

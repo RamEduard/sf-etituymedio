@@ -1,6 +1,6 @@
 <?php
 
-namespace TuyMedio\Bundle\UsuarioBundle\Entity;
+namespace TuyMedio\Bundle\AdminBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 
