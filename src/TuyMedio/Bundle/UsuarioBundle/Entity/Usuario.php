@@ -16,6 +16,8 @@ use Doctrine\ORM\Mapping as ORM;
 class Usuario extends BaseUser
 {
     /**
+     * @var integer
+     *
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")

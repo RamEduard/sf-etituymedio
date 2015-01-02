@@ -49,7 +49,7 @@ sonata_user:
    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
    prefix: /admin
 
-test_userbundle:
-    resource: "@TestUserBundle/Controller/"
+usuario_bundle:
+    resource: "@TuyMedioUsuarioBundle/Controller/"
     type:     annotation
     prefix:   /
