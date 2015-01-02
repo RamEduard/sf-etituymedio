@@ -19,71 +19,70 @@ class Alumno
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="cedula", type="string", length=15)
      */
-    private $cedula;
+    protected $cedula;
 
     /**
      * @var string
      *
      * @ORM\Column(name="apellidos", type="string", length=100)
      */
-    private $apellidos;
+    protected $apellidos;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nombres", type="string", length=100)
      */
-    private $nombres;
+    protected $nombres;
 
     /**
      * @var string
      *
      * @ORM\Column(name="sexo", type="string", length=1)
      */
-    private $sexo;
+    protected $sexo;
     
     /**
      * @var string
      *
      * @ORM\Column(name="direccion", type="string", length=255)
      */
-    private $direccionVivienda;
+    protected $direccionVivienda;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="fecha_nacimiento", type="date")
      */
-    private $fechaNacimiento;
+    protected $fechaNacimiento;
 
     /**
      * @var string
      *
      * @ORM\Column(name="lugar_nacimiento", type="string", length=255)
      */
-    private $lugarNacimiento;
+    protected $lugarNacimiento;
     
     /**
      * @var integer
      *
      * @ORM\Column(name="grado_actual", type="integer")
      */
-    private $gradoActual;
+    protected $gradoActual;
 
     /**
      * @var array
      *
      * @ORM\Column(name="grados_cursados", type="array")
      */
-    private $gradosCursados;
-
+    protected $gradosCursados;
 
     /**
      * Get id
@@ -93,6 +92,19 @@ class Alumno
     public function getId()
     {
         return $this->id;
+    }
+    
+    /**
+     * Set id
+     * 
+     * @param integer $id
+     * @return Alumno
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+        
+        return $this;
     }
 
     /**
