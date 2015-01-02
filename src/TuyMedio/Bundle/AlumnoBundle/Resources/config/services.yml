@@ -1,0 +1,6 @@
+services:
+    tuy_medio_alumno.admin.alumno:
+        class: TuyMedio\Bundle\AlumnoBundle\Admin\AlumnoAdmin
+        arguments: [~, TuyMedio\Bundle\AlumnoBundle\Entity\Alumno, TuyMedioAlumnoBundle:AlumnoAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Alumno}
