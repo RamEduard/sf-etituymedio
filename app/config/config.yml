@@ -92,6 +92,14 @@ fos_user:
 #                json: Sonata\Doctrine\Types\JsonType
 
 # Sonata AdminBundle
+sonata_admin:
+    title:      ETI Tuy Medio
+    title_logo: bundles/sonataadmin/logo_title.png
+    options:
+        html5_validate:                         true      # use html5 validation
+        confirm_exit:                           true      # enabled confirmation when quitting with unsaved changes
+        use_select2:                            true      # enable select2
+    
 sonata_block:
     default_contexts: [cms]
     blocks:
