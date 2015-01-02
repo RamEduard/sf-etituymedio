@@ -128,6 +128,7 @@ sonata_block:
         
 # SimpleThingsEntityAuditBundle Configuration
 sonata_doctrine_orm_admin:
+    entity_manager: '@doctrine.orm.entity_manager'
     audit:
         force: false
 simple_things_entity_audit:
