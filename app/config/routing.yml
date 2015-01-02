@@ -1,3 +1,8 @@
+tuy_medio_seccion:
+    resource: "@TuyMedioSeccionBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 tuy_medio_materia:
     resource: "@TuyMedioMateriaBundle/Controller/"
     type:     annotation
@@ -25,6 +30,10 @@ fos_user_change_password:
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin
+    
+simple_things_entity_audit:
+    resource: "@SimpleThingsEntityAuditBundle/Resources/config/routing.yml"
+    prefix: /admin/audit
 
 _sonata_admin:
     resource: .
