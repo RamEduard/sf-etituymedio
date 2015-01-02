@@ -65,12 +65,34 @@ class AlumnoAdmin extends Admin
             ->add('cedula')
             ->add('apellidos')
             ->add('nombres')
-            ->add('sexo')
+            ->add('sexo', 'sonata_user_gender', array(
+                'required' => true,
+                'translation_domain' => $this->getTranslationDomain()
+            ))
             ->add('direccionVivienda')
-            ->add('fechaNacimiento')
+            ->add('fechaNacimiento', 'birthday')
             ->add('lugarNacimiento')
-            ->add('gradoActual')
-            ->add('gradosCursados')
+            ->add('gradoActual', 'choice', array(
+                'choices' => array(
+                    '1' => '1',
+                    '2' => '2',
+                    '3' => '3',
+                    '4' => '4',
+                    '5' => '5',
+                    '6' => '6',
+                )
+            ))
+            ->add('gradosCursados', 'choice', array(
+                'multiple' => true,
+                'choices' => array(
+                    '1' => '1',
+                    '2' => '2',
+                    '3' => '3',
+                    '4' => '4',
+                    '5' => '5',
+                    '6' => '6',
+                )
+            ))
         ;
     }
 

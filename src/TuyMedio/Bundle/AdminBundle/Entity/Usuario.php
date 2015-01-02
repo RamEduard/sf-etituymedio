@@ -28,4 +28,14 @@ class Usuario extends BaseUser
     {
         parent::__construct();
     }
+    
+    /**
+     * Arrelglo de sexos
+     * 
+     * @return array
+     */
+    static function getGenderList()
+    {
+        return array('F' => 'Femenino', 'M' => 'Masculino');
+    }
 }
