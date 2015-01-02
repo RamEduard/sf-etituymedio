@@ -19,16 +19,15 @@ class Seccion
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="letra", type="string", length=1)
      */
-    private $letra;
-
-
+    protected $letra;
+    
     /**
      * Get id
      *

@@ -1,3 +1,8 @@
+tuy_medio_grado:
+    resource: "@TuyMedioGradoBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 tuy_medio_seccion:
     resource: "@TuyMedioSeccionBundle/Controller/"
     type:     annotation
