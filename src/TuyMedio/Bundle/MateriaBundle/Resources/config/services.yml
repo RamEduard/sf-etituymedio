@@ -1,0 +1,6 @@
+services:
+    tuy_medio_materia.admin.materia:
+        class: TuyMedio\Bundle\MateriaBundle\Admin\MateriaAdmin
+        arguments: [~, TuyMedio\Bundle\MateriaBundle\Entity\Materia, TuyMedioMateriaBundle:MateriaAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Materia}
