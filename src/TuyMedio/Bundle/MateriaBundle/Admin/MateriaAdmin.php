@@ -50,6 +50,7 @@ class MateriaAdmin extends Admin
             ->add('id')
             ->add('nombre')
             ->add('gradosAsociados', 'choice', array(
+                'multiple' => true,
                 'choices' => array(
                     '1' => '1',
                     '2' => '2',
