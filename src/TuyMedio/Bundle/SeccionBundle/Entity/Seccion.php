@@ -73,4 +73,9 @@ class Seccion
     {
         return $this->letra;
     }
+    
+    public function __toString()
+    {
+        return $this->letra;
+    }
 }
