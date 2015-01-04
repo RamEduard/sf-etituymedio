@@ -18,6 +18,7 @@ class GradoAdmin extends Admin
         $datagridMapper
             ->add('id')
             ->add('numero')
+            ->add('secciones')
         ;
     }
 
@@ -29,6 +30,7 @@ class GradoAdmin extends Admin
         $listMapper
             ->add('id')
             ->add('numero')
+            ->add('secciones')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -63,6 +65,7 @@ class GradoAdmin extends Admin
         $showMapper
             ->add('id')
             ->add('numero')
+            ->add('secciones')
         ;
     }
 }
