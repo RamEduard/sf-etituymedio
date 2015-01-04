@@ -127,14 +127,14 @@ sonata_block:
         sonata.block.service.text: # used to if you plan to use Sonata user routes
         
 # SimpleThingsEntityAuditBundle Configuration
-sonata_doctrine_orm_admin:
-    entity_manager: '@doctrine.orm.entity_manager'
-    audit:
-        force: false
-simple_things_entity_audit:
-        audited_entities:
-            - TuyMedio\Bundle\AlumnoBundle\Entity\Alumno
-            - TuyMedio\Bundle\MateriaBundle\Entity\Materia
+#sonata_doctrine_orm_admin:
+#    entity_manager: '@doctrine.orm.entity_manager'
+#    audit:
+#        force: false
+#simple_things_entity_audit:
+#        audited_entities:
+#            - TuyMedio\Bundle\AlumnoBundle\Entity\Alumno
+#            - TuyMedio\Bundle\MateriaBundle\Entity\Materia
 
 parameters:
     sonata.user.admin.user.entity: TuyMedio\Bundle\AdminBundle\Entity\Usuario
