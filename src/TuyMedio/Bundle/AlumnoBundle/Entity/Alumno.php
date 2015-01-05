@@ -289,6 +289,19 @@ class Alumno
     {
         return $this->curso;
     }
+    
+    /**
+     * Set curso
+     * 
+     * @param integer $curso
+     * @return Alumno
+     */
+    public function setCurso($curso)
+    {
+        $this->curso = $curso;
+        
+        return $this;
+    }
 
     /**
      * Set gradosCursados
