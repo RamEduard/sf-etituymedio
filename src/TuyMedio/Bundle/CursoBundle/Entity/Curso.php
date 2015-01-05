@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Curso
  *
- * @ORM\Table()
+ * @ORM\Table(uniqueConstraints={@ORM\UniqueConstraint(name="curso_unique", columns={"grado_id", "seccion_id"})})
  * @ORM\Entity(repositoryClass="TuyMedio\Bundle\CursoBundle\Entity\CursoRepository")
  */
 class Curso
