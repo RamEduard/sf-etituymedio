@@ -16,6 +16,7 @@ class AppKernel extends TuyMedioKernel
             new TuyMedio\Bundle\SeccionBundle\TuyMedioSeccionBundle(),
             new TuyMedio\Bundle\GradoBundle\TuyMedioGradoBundle(),
             new TuyMedio\Bundle\CursoBundle\TuyMedioCursoBundle(),
+            new TuyMedio\Bundle\AsistenciaBundle\TuyMedioAsistenciaBundle(),
         );
         
         $bundles = array_merge(parent::registerBundles(), $bundles);

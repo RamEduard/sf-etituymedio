@@ -91,9 +91,17 @@ class Alumno
      */
     protected $gradosCursados;
     
+    /**
+     * @var ArrayCollection
+     * 
+     * @ORM\OneToMany(targetEntity="TuyMedio\Bundle\AsistenciaBundle\Entity\Asistencia", mappedBy="alumno")
+     */
+    protected $asistencias;
+    
     public function __construct()
     {
         $this->gradosCursados = new ArrayCollection();
+        $this->asistencias = new ArrayCollection();
     }
 
     /**
@@ -326,8 +334,23 @@ class Alumno
         return $this->gradosCursados;
     }
     
+    /**
+     * Get asistencias
+     * 
+     * @return ArrayCollection
+     */
+    public function getAsistencias()
+    {
+        return $this->asistencias;
+    }
+    
+    /**
+     * Get cedula, nombres, apellidos
+     * 
+     * @return string
+     */
     public function __toString()
     {
-        return "{$this->nombres} {$this->apellidos}";
+        return "C.I. {$this->cedula}. {$this->nombres} {$this->apellidos}";
     }
 }

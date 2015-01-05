@@ -3,6 +3,7 @@
 namespace TuyMedio\Bundle\MateriaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Materia
@@ -35,6 +36,17 @@ class Materia
      */
     protected $gradosAsociados;
 
+    /**
+     * @var ArrayCollection
+     * 
+     * @ORM\OneToMany(targetEntity="TuyMedio\Bundle\AsistenciaBundle\Entity\Asistencia", mappedBy="materia")
+     */
+    protected $asistencias;
+    
+    public function __construct()
+    {
+        $this->asistencias = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -103,6 +115,16 @@ class Materia
     public function getGradosAsociados()
     {
         return $this->gradosAsociados;
+    }
+    
+    /**
+     * Get asistencias
+     * 
+     * @return ArrayCollection
+     */
+    public function getAsistencias()
+    {
+        return $this->asistencias;
     }
     
     /**
