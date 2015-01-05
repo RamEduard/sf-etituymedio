@@ -1,0 +1,6 @@
+services:
+    tuy_medio_asistencia.admin.asistencia:
+        class: TuyMedio\Bundle\AsistenciaBundle\Admin\AsistenciaAdmin
+        arguments: [~, TuyMedio\Bundle\AsistenciaBundle\Entity\Asistencia, TuyMedioAsistenciaBundle:AsistenciaAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Asistencia}
