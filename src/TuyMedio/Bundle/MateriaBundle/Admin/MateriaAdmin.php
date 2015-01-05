@@ -16,7 +16,6 @@ class MateriaAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
             ->add('nombre')
             ->add('gradosAsociados')
         ;
@@ -28,7 +27,6 @@ class MateriaAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
             ->add('nombre')
             ->add('gradosAsociados')
             ->add('_action', 'actions', array(
@@ -47,18 +45,12 @@ class MateriaAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('id')
+            ->add('id', 'hidden')
             ->add('nombre')
-            ->add('gradosAsociados', 'choice', array(
+            ->add('gradosAsociados', 'entity', array(
                 'multiple' => true,
-                'choices' => array(
-                    '1' => '1',
-                    '2' => '2',
-                    '3' => '3',
-                    '4' => '4',
-                    '5' => '5',
-                    '6' => '6',
-                )
+                'class' => 'TuyMedioGradoBundle:Grado',
+                'property' => 'numero'
             ))
         ;
     }

@@ -104,4 +104,14 @@ class Materia
     {
         return $this->gradosAsociados;
     }
+    
+    /**
+     * Get nombre
+     * 
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->nombre;
+    }
 }

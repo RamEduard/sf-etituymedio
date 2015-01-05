@@ -16,7 +16,6 @@ class AlumnoAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
             ->add('cedula')
             ->add('apellidos')
             ->add('nombres')
@@ -24,7 +23,7 @@ class AlumnoAdmin extends Admin
             ->add('direccionVivienda')
             ->add('fechaNacimiento')
             ->add('lugarNacimiento')
-            ->add('gradoActual')
+            ->add('curso')
             ->add('gradosCursados')
         ;
     }
@@ -35,16 +34,12 @@ class AlumnoAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
             ->add('cedula')
             ->add('apellidos')
             ->add('nombres')
             ->add('sexo')
             ->add('direccionVivienda')
-            ->add('fechaNacimiento')
-            ->add('lugarNacimiento')
-            ->add('gradoActual')
-            ->add('gradosCursados')
+            ->add('curso')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -60,8 +55,9 @@ class AlumnoAdmin extends Admin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
+        #$this->getModelManager()->create('TuyMedioCursoBundle:Curso');
         $formMapper
-            ->add('id')
+            ->add('id', 'hidden')
             ->add('cedula')
             ->add('apellidos')
             ->add('nombres')
@@ -72,26 +68,14 @@ class AlumnoAdmin extends Admin
             ->add('direccionVivienda')
             ->add('fechaNacimiento', 'birthday')
             ->add('lugarNacimiento')
-            ->add('gradoActual', 'choice', array(
-                'choices' => array(
-                    '1' => '1',
-                    '2' => '2',
-                    '3' => '3',
-                    '4' => '4',
-                    '5' => '5',
-                    '6' => '6',
-                )
+            ->add('curso', 'entity', array(
+                'class' => 'TuyMedioCursoBundle:Curso',
+                'property' => 'grado',
             ))
-            ->add('gradosCursados', 'choice', array(
+            ->add('gradosCursados', 'entity', array(
                 'multiple' => true,
-                'choices' => array(
-                    '1' => '1',
-                    '2' => '2',
-                    '3' => '3',
-                    '4' => '4',
-                    '5' => '5',
-                    '6' => '6',
-                )
+                'class' => 'TuyMedioGradoBundle:Grado',
+                'property' => 'numero'
             ))
         ;
     }
@@ -102,7 +86,6 @@ class AlumnoAdmin extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('id')
             ->add('cedula')
             ->add('apellidos')
             ->add('nombres')
@@ -110,7 +93,7 @@ class AlumnoAdmin extends Admin
             ->add('direccionVivienda')
             ->add('fechaNacimiento')
             ->add('lugarNacimiento')
-            ->add('gradoActual')
+            ->add('curso')
             ->add('gradosCursados')
         ;
     }

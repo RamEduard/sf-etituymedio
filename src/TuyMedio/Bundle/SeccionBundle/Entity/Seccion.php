@@ -3,6 +3,7 @@
 namespace TuyMedio\Bundle\SeccionBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Seccion
@@ -27,6 +28,18 @@ class Seccion
      * @ORM\Column(name="letra", type="string", length=1)
      */
     protected $letra;
+    
+    /**
+     * @var ArrayCollection
+     * 
+     * @ORM\OneToMany(targetEntity="TuyMedio\Bundle\CursoBundle\Entity\Curso", mappedBy="seccion")
+     */
+    protected $cursos;
+    
+    public function __construct()
+    {
+        $this->cursos = new ArrayCollection();
+    }
     
     /**
      * Get id
@@ -74,6 +87,21 @@ class Seccion
         return $this->letra;
     }
     
+    /**
+     * Get cursos
+     * 
+     * @return ArrayCollection
+     */
+    public function getCursos()
+    {
+        return $this->cursos;
+    }
+    
+    /**
+     * Get Letra
+     * 
+     * @return string
+     */
     public function __toString()
     {
         return $this->letra;

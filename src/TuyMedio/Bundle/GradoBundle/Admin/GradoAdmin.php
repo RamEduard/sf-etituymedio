@@ -16,9 +16,8 @@ class GradoAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
             ->add('numero')
-            ->add('secciones')
+            ->add('cursos')
         ;
     }
 
@@ -28,9 +27,8 @@ class GradoAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
             ->add('numero')
-            ->add('secciones')
+            ->add('cursos')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -47,13 +45,8 @@ class GradoAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('id')
+            ->add('id', 'hidden')
             ->add('numero')
-            ->add('secciones', 'entity', array(
-                'multiple' => true,
-                'class' => 'TuyMedioSeccionBundle:Seccion',
-                'property' => 'letra'
-            ))
         ;
     }
 
@@ -65,7 +58,7 @@ class GradoAdmin extends Admin
         $showMapper
             ->add('id')
             ->add('numero')
-            ->add('secciones')
+            ->add('cursos')
         ;
     }
 }

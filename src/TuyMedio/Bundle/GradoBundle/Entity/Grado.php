@@ -20,29 +20,25 @@ class Grado
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="numero", type="string", length=1)
      */
-    private $numero;
-
+    protected $numero;
+    
     /**
      * @var ArrayCollection
      * 
-     * @ORM\ManyToMany(targetEntity="TuyMedio\Bundle\SeccionBundle\Entity\Seccion")
-     * @ORM\JoinTable(
-     *  name="GradosSecciones",
-     *  joinColumns={@ORM\JoinColumn(name="grado_id", referencedColumnName="id")},
-     *  inverseJoinColumns={@ORM\JoinColumn(name="seccion_id", referencedColumnName="id", unique=true)}
-     * )
+     * @ORM\OneToMany(targetEntity="TuyMedio\Bundle\CursoBundle\Entity\Curso", mappedBy="grado")
      */
-    protected $secciones;
+    protected $cursos;
 
-    public function __construct() {
-        $this->secciones = new ArrayCollection();
+    public function __construct()
+    {
+        $this->cursos = new ArrayCollection();
     }
     
     /**
@@ -92,12 +88,22 @@ class Grado
     }
     
     /**
-     * Get Secciones
+     * Get cursos
      * 
      * @return ArrayCollection
      */
-    public function getSecciones()
+    public function getCursos()
     {
-        return $this->secciones;
+        return $this->cursos;
+    }
+    
+    /**
+     * Get Numero
+     * 
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->numero;
     }
 }

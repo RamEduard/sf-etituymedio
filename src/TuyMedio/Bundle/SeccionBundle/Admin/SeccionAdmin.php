@@ -16,8 +16,8 @@ class SeccionAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
             ->add('letra')
+            ->add('cursos')
         ;
     }
 
@@ -27,8 +27,8 @@ class SeccionAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
             ->add('letra')
+            ->add('cursos')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -45,7 +45,7 @@ class SeccionAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('id')
+            ->add('id', 'hidden')
             ->add('letra')
         ;
     }
@@ -58,6 +58,7 @@ class SeccionAdmin extends Admin
         $showMapper
             ->add('id')
             ->add('letra')
+            ->add('cursos')
         ;
     }
 }

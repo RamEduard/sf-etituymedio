@@ -3,6 +3,7 @@
 namespace TuyMedio\Bundle\AlumnoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Alumno
@@ -72,17 +73,28 @@ class Alumno
     
     /**
      * @var integer
-     *
-     * @ORM\Column(name="grado_actual", type="integer")
+     * 
+     * @ORM\ManyToOne(targetEntity="TuyMedio\Bundle\CursoBundle\Entity\Curso", inversedBy="alumnos")
+     * @ORM\JoinColumn(name="curso_id", referencedColumnName="id")
      */
-    protected $gradoActual;
-
+    protected $curso;
+    
     /**
-     * @var array
-     *
-     * @ORM\Column(name="grados_cursados", type="array")
+     * @var ArrayCollection
+     * 
+     * @ORM\ManyToMany(targetEntity="TuyMedio\Bundle\GradoBundle\Entity\Grado")
+     * @ORM\JoinTable(
+     *  name="GradosAlumnos",
+     *  joinColumns={@ORM\JoinColumn(name="alumno_id", referencedColumnName="id")},
+     *  inverseJoinColumns={@ORM\JoinColumn(name="grado_id", referencedColumnName="id")}
+     * )
      */
     protected $gradosCursados;
+    
+    public function __construct()
+    {
+        $this->gradosCursados = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -269,26 +281,13 @@ class Alumno
     }
     
     /**
-     * Set gradoActual
-     *
-     * @param integer $gradoActual
-     * @return Alumno
+     * Get curso
+     * 
+     * @return integer
      */
-    public function setGradoActual($gradoActual)
+    public function getCurso()
     {
-        $this->gradoActual = $gradoActual;
-
-        return $this;
-    }
-
-    /**
-     * Get gradoActual
-     *
-     * @return integer 
-     */
-    public function getGradoActual()
-    {
-        return $this->gradoActual;
+        return $this->curso;
     }
 
     /**
@@ -312,5 +311,10 @@ class Alumno
     public function getGradosCursados()
     {
         return $this->gradosCursados;
+    }
+    
+    public function __toString()
+    {
+        return "{$this->nombres} {$this->apellidos}";
     }
 }
