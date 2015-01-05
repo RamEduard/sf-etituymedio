@@ -60,6 +60,7 @@ class Curso
     public function __construct()
     {
         $this->alumnos = new ArrayCollection();
+        $this->materias = new ArrayCollection();
     }
 
     /**
@@ -70,6 +71,18 @@ class Curso
     public function getId()
     {
         return $this->id;
+    }
+    
+    /**
+     * Set id
+     * 
+     * @return Curso
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+        
+        return $this;
     }
 
     /**
@@ -128,7 +141,12 @@ class Curso
         return $this->materias;
     }
     
-    
+    /**
+     * Set materias
+     * 
+     * @param ArrayCollection $materias
+     * @return Curso
+     */
     public function setMaterias(ArrayCollection $materias)
     {
         $this->materias = $materias;
