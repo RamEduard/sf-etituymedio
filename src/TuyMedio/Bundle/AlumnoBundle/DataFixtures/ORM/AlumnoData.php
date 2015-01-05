@@ -4,6 +4,7 @@ namespace TuyMedio\Bundle\CursoBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use TuyMedio\Bundle\AlumnoBundle\Entity\Alumno;
 
 /**
@@ -21,6 +22,10 @@ class AlumnoData implements FixtureInterface
     {
         $curso1 = $manager->find('TuyMedioCursoBundle:Curso', 1);
         $curso2 = $manager->find('TuyMedioCursoBundle:Curso', 2);
+        
+        if (!is_object($curso1) || !is_object($curso2)) {
+            throw new NotFoundHttpException('TuyMedioCursoBundle:Curso:1 || TuyMedioCursoBundle:Curso:2 not found.');
+        }
         
         $alumno1 = new Alumno();
         $alumno1->setCedula(25947295)
