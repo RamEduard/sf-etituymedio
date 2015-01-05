@@ -11,11 +11,11 @@ class AppKernel extends TuyMedioKernel
             new AppBundle\AppBundle(),
             new TuyMedio\Bundle\AdminBundle\TuyMedioAdminBundle(),
             new TuyMedio\Bundle\KernelBundle\TuyMedioKernelBundle(),
-            new TuyMedio\Bundle\AlumnoBundle\TuyMedioAlumnoBundle(),
-            new TuyMedio\Bundle\MateriaBundle\TuyMedioMateriaBundle(),
-            new TuyMedio\Bundle\SeccionBundle\TuyMedioSeccionBundle(),
             new TuyMedio\Bundle\GradoBundle\TuyMedioGradoBundle(),
+            new TuyMedio\Bundle\SeccionBundle\TuyMedioSeccionBundle(),
+            new TuyMedio\Bundle\MateriaBundle\TuyMedioMateriaBundle(),
             new TuyMedio\Bundle\CursoBundle\TuyMedioCursoBundle(),
+            new TuyMedio\Bundle\AlumnoBundle\TuyMedioAlumnoBundle(),
             new TuyMedio\Bundle\AsistenciaBundle\TuyMedioAsistenciaBundle(),
         );
         
