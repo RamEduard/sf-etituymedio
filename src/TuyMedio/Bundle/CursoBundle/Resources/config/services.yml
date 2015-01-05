@@ -1,0 +1,6 @@
+services:
+    tuy_medio_curso.admin.curso:
+        class: TuyMedio\Bundle\CursoBundle\Admin\CursoAdmin
+        arguments: [~, TuyMedio\Bundle\CursoBundle\Entity\Curso, TuyMedioCursoBundle:CursoAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Curso}
