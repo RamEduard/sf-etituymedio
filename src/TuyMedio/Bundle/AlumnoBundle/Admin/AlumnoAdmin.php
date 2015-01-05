@@ -55,7 +55,6 @@ class AlumnoAdmin extends Admin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
-        #$this->getModelManager()->create('TuyMedioCursoBundle:Curso');
         $formMapper
             ->add('id', 'hidden')
             ->add('cedula')
@@ -69,8 +68,7 @@ class AlumnoAdmin extends Admin
             ->add('fechaNacimiento', 'birthday')
             ->add('lugarNacimiento')
             ->add('curso', 'entity', array(
-                'class' => 'TuyMedioCursoBundle:Curso',
-                'property' => 'grado',
+                'class' => 'TuyMedioCursoBundle:Curso'
             ))
             ->add('gradosCursados', 'entity', array(
                 'multiple' => true,
