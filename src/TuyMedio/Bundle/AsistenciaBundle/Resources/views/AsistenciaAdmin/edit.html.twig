@@ -55,24 +55,7 @@
                             </div>
                         </div>
                     {% else %}
-                        {#<div class="form-group">
-                            <label class="control-label required" for="curso">Curso: </label>
-                            <select tabindex="-1" id="curso" name="" required="required" class="form-control select2-offscreen">
-                                <option value="">Seleccione el curso</option>
-                                {% for key,curso in cursos %}
-                                    <option value="{{ key }}">{{ curso }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="form-group alumnoSelect">
-                            {{ form_label(form.alumno) }}
-                            {{ form_widget(form.alumno) }}
-                        </div>
-                        <div class="form-group materiaSelect">
-                            {{ form_label(form.materia) }}
-                            {{ form_widget(form.materia) }}
-                        </div>#}
-{#                        {{ form_helper.render_groups(admin, form, admin.formtabs['default'].groups, has_tab) }}#}
+                        {#{{ form_helper.render_groups(admin, form, admin.formtabs['default'].groups, has_tab) }}#}
                         {% if has_tab %}<div class="row">{% endif %}
                         {% for code in admin.formtabs['default'].groups %}
                             {% set form_group = admin.formgroups[code] %}
@@ -196,7 +179,11 @@
                 if ($(this).val() !== '') {
                     var cursoId = $(this).val();
                     $.ajax({
-                        url: './alumnos-curso/' + cursoId,
+                        {% if action == 'edit' %}
+                            url: '../alumnos-curso/' + cursoId,
+                        {% else %}
+                            url: './alumnos-curso/' + cursoId,
+                        {% endif %}
                         dataType: 'json',
                         success: function(response) {
                             $('.alumnoSelect select').html('');
@@ -206,7 +193,11 @@
                         }
                     });
                     $.ajax({
-                        url: './materias-curso/' + cursoId,
+                        {% if action == 'edit' %}
+                            url: '../materias-curso/' + cursoId,
+                        {% else %}
+                            url: './materias-curso/' + cursoId,
+                        {% endif %}
                         dataType: 'json',
                         success: function(response) {
                             $('.materiaSelect select').html('');
