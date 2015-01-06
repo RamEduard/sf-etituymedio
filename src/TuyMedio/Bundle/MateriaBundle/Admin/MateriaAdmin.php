@@ -10,6 +10,17 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class MateriaAdmin extends Admin
 {
+    
+    /**
+     * @var string
+     */
+    protected $baseRoutePattern = 'materia';
+    
+    /**
+     * @var boolean
+     */
+    protected $supportsPreviewMode = true;
+    
     /**
      * @param DatagridMapper $datagridMapper
      */

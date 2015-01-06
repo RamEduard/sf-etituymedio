@@ -10,6 +10,17 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class CursoAdmin extends Admin
 {
+    
+    /**
+     * @var string
+     */
+    protected $baseRoutePattern = 'curso';
+    
+    /**
+     * @var boolean
+     */
+    protected $supportsPreviewMode = true;
+    
     /**
      * @param DatagridMapper $datagridMapper
      */

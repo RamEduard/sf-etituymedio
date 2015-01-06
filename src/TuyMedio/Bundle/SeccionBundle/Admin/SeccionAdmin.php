@@ -10,6 +10,17 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class SeccionAdmin extends Admin
 {
+    
+    /**
+     * @var string
+     */
+    protected $baseRoutePattern = 'seccion';
+    
+    /**
+     * @var boolean
+     */
+    protected $supportsPreviewMode = true;
+    
     /**
      * @param DatagridMapper $datagridMapper
      */

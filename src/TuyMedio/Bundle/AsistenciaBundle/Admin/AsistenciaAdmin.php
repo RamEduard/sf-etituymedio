@@ -17,13 +17,20 @@ class AsistenciaAdmin extends Admin
     protected $baseRoutePattern = 'asistencia';
     
     /**
+     * @var boolean
+     */
+    protected $supportsPreviewMode = true;
+    
+    /**
      * @param DatagridMapper $datagridMapper
      */
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
             ->add('id')
-            ->add('fecha')
+            ->add('materia')
+            ->add('alumno')
+            ->add('fecha', null, array(), 'date')
             ->add('alumnoAsistente')
             ->add('observaciones')
         ;
@@ -36,6 +43,8 @@ class AsistenciaAdmin extends Admin
     {
         $listMapper
             ->add('id')
+            ->add('materia')
+            ->add('alumno')
             ->add('fecha')
             ->add('alumnoAsistente')
             ->add('observaciones')
@@ -77,6 +86,8 @@ class AsistenciaAdmin extends Admin
     {
         $showMapper
             ->add('id')
+            ->add('materia')
+            ->add('alumno')
             ->add('fecha')
             ->add('alumnoAsistente')
             ->add('observaciones')
