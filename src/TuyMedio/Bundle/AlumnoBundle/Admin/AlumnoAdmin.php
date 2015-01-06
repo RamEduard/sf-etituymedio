@@ -10,6 +10,17 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class AlumnoAdmin extends Admin
 {
+    
+    /**
+     * @var string
+     */
+    protected $baseRoutePattern = 'alumno';
+    
+    /**
+     * @var boolean
+     */
+    protected $supportsPreviewMode = true;
+    
     /**
      * @param DatagridMapper $datagridMapper
      */
@@ -19,9 +30,14 @@ class AlumnoAdmin extends Admin
             ->add('cedula')
             ->add('apellidos')
             ->add('nombres')
-            ->add('sexo')
+            ->add('sexo', null, array(), 'choice', array(
+                'choices' => array(
+                    'F' => 'F',
+                    'M' => 'M'
+                )
+            ))
             ->add('direccionVivienda')
-            ->add('fechaNacimiento')
+            ->add('fechaNacimiento', null, array(), 'date')
             ->add('lugarNacimiento')
             ->add('curso')
             ->add('gradosCursados')
