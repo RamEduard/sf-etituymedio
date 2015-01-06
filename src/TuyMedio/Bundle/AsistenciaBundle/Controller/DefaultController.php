@@ -66,12 +66,4 @@ class DefaultController extends Controller
         
         return new JsonResponse($materias);
     }
-    
-    /**
-     * {@inheritdoc}
-     */
-    protected function doctrineManager()
-    {
-        return $this->getDoctrine()->getManager();
-    }
 }
