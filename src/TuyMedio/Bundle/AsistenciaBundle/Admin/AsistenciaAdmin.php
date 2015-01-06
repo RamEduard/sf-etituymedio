@@ -27,7 +27,6 @@ class AsistenciaAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
             ->add('materia')
             ->add('alumno')
             ->add('fecha', null, array(), 'date')
@@ -42,7 +41,6 @@ class AsistenciaAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
             ->add('materia')
             ->add('alumno')
             ->add('fecha')
@@ -67,9 +65,11 @@ class AsistenciaAdmin extends Admin
             ->add('id', 'hidden')
             ->add('alumno', 'entity', array(
                 'class' => 'TuyMedioAlumnoBundle:Alumno'
+                #'choices' => array()
             ))
             ->add('materia', 'entity', array(
                 'class' => 'TuyMedioMateriaBundle:Materia'
+                #'choices' => array()
             ))
             ->add('fecha', 'date')
             ->add('alumnoAsistente')

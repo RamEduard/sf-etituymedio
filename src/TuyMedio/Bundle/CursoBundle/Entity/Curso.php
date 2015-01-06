@@ -154,6 +154,16 @@ class Curso
         return $this;
     }
     
+    /**
+     * Get alumnos
+     * 
+     * @return ArrayCollection
+     */
+    public function getAlumnos()
+    {
+        return $this->alumnos;
+    }
+    
     public function __toString()
     {
         return "{$this->grado} {$this->seccion}";
