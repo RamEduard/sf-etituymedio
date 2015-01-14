@@ -8,20 +8,23 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
+/**
+ * @Route("/admin/asistencia")
+ */
 class DefaultController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
+     * @Route("/test")
      * @Template()
      */
-    public function indexAction($name)
+    public function indexAction($name = 'Ramon')
     {
         return array('name' => $name);
     }
     
     /**
      * @param integer $id
-     * @Route("/admin/asistencia/alumnos-curso/{id}")
+     * @Route("/alumnos-curso/{id}")
      */
     public function alumnosCursoAction($id)
     {
@@ -45,7 +48,7 @@ class DefaultController extends Controller
     
     /**
      * @param integer $id
-     * @Route("/admin/asistencia/materias-curso/{id}")
+     * @Route("/materias-curso/{id}")
      */
     public function materiasCursoAction($id)
     {
