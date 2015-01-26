@@ -87,6 +87,7 @@ class AlumnoAdmin extends Admin
                 'class' => 'TuyMedioCursoBundle:Curso'
             ))
             ->add('gradosCursados', 'entity', array(
+                'required' => false,
                 'multiple' => true,
                 'class' => 'TuyMedioGradoBundle:Grado',
                 'property' => 'numero'

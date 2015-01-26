@@ -83,6 +83,7 @@ class CursoAdmin extends Admin
             ->add('grado')
             ->add('seccion')
             ->add('materias')
+            ->add('alumnos')
         ;
     }
 }
